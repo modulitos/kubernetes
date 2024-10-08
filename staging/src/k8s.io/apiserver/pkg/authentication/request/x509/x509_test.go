@@ -37,31 +37,9 @@ const (
 
 	/*
 
-	   > root key
-	   openssl genrsa -out root.key 1024 && \
-	   cat root.key
-
-	   > output
-
-	   -----BEGIN PRIVATE KEY-----
-	   MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAK3wMe3+eL3L/qWp
-	   ayy6/Z4W9bo31G9iHFGa67FArvgXn9VEB+EQy8M5T7Cgb8cFczI86AsvW5a3h2Tc
-	   Ma5Zg3Bg/ag3oPTgqRZiBzHBgWNx27NbHKevnNPVPYHdvFkUyS+qyHKsdYPfxWB7
-	   TzQ1Tc+eztnncBm7rveysf45JTxbAgMBAAECgYBPxypveVcR3n3Gp+UjWAS5PNip
-	   9691Au/wMflGjF90JQnHPHPMs/JxcVjurzd1djd25F6durPsdfMgvKoAyMeywrE1
-	   OCzgXl0egvW5r4+Ck28A0nYmcdgzNtAmkTPt9BxCmikXwDa0R20V+V8lgp7L0Hvt
-	   zwdqFbGIUJgcpLn04QJBAN/UTzE+NaHltRLlp32K4h5s86bcSWXT/xB09+uhjTIJ
-	   j3Xczkdnz3RhpURk5VGiOU5nwvvI2hE74m3GmeUm36sCQQDG8CsMlcG63wjWkXfT
-	   G6UUOeJc1mOEd39Lz4lHRllR/7UAKa+tNe7TOqtg12TST5QsjNDFEBHhNuV0vrhs
-	   FyYRAkEAnNBnBy35b0q6+NlS5f7WetCER8QP3DqReZspUrllbcgK7V1cW+ScEIKU
-	   wf0aOH46PfcuQS6vsOFOuvAoQ8ZfbwJBAMOWQqzX26VPPJBAas9qQY22L0BZI3SM
-	   S+IMBArINm7w+VJUqbyg5tJTv0Sx4BUJWkPGmkb0uq9y2ntCO21CARECQCT0BMIL
-	   nQ+uHPh8Y7nTvlJ5VGU/eW1skd9y4/9wvJz3/YAD0H7/r7PgjtYoozpHpjDUbcnm
-	   1qPcKn6wFSZwlEA=
-	   -----END PRIVATE KEY-----
-
 	   > rootCACert
 
+	   openssl genrsa -out root.key 1024 && \
 	   openssl rsa -in ./root.key -outform PEM -pubout -out ./root.pub && \
 	   CONFIG="[ v3_req ]\n" && \
 	   CONFIG="${CONFIG}subjectKeyIdentifier=hash\n" && \
