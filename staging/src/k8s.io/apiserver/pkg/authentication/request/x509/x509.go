@@ -301,12 +301,13 @@ var uidOID = asn1.ObjectIdentifier([]int{0, 9, 2342, 19200300, 100, 1, 1})
 // Go's crypto/x509 library doesn't explicitly serialize UID to a named field, so
 // we read it off the asn1 array.
 func parseUIDFromCert(cert *x509.Certificate) string {
+	uid := ""
 	for _, name := range cert.Subject.Names {
 		if name.Type.Equal(uidOID) {
 			if s, ok := name.Value.(string); ok && len(s) > 0 {
-				return s
+				uid = s
 			}
 		}
 	}
-	return ""
+	return uid
 }
