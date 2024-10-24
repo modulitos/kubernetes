@@ -644,7 +644,7 @@ func TestX509(t *testing.T) {
 					Groups: []string{"My Org"},
 					UID:    "client_id",
 					Extra: map[string][]string{
-						"authentication.kubernetes.io/credential-id": {"X509SHA256=4f830ed74c460c0b14b177e02ee370a8bd38c61c7b813c607255245a5e0b3b4e"},
+						user.CredentialIDKey: {"X509SHA256=4f830ed74c460c0b14b177e02ee370a8bd38c61c7b813c607255245a5e0b3b4e"},
 					},
 				},
 			},
